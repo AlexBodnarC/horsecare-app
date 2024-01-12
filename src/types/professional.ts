@@ -5,4 +5,5 @@ export interface IProfessional {
   description: string
   imageUrl: string
   price: number
+  isActive: boolean
 }

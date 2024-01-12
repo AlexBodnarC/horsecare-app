@@ -43,6 +43,21 @@ const ProfessionalView: FC = () => {
     navigate(-1)
   }
 
+  const handleReserve = async () => {
+    const { error } = await supabase
+      .from("professionals")
+      .update({ isActive: false })
+      .eq("id", id)
+
+    if (!error) {
+      notify("You have successfully reserved a professional", "success")
+
+      navigate(-1)
+    } else {
+      notify(error.message, "error")
+    }
+  }
+
   return !isLoading ? (
     currentProfessional && (
       <div className={s.container}>
@@ -64,7 +79,12 @@ const ProfessionalView: FC = () => {
               Cancel
             </Button>
 
-            <Button>Buy</Button>
+            <Button
+              disabled={!currentProfessional.isActive}
+              onClick={handleReserve}
+            >
+              Reserve
+            </Button>
           </div>
         </section>
       </div>

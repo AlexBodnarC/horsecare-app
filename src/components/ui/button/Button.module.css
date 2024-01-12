@@ -8,3 +8,8 @@
   border-radius: var(--border-radius);
   cursor: pointer;
 }
+
+.button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
