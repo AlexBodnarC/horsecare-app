@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg-color);
+}
+
+.input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.error {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 4px;
+  color: var(--error-color);
+}
