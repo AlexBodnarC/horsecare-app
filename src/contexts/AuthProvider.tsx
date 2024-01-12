@@ -88,6 +88,8 @@ export const AuthProvider: FC<IChildren> = ({ children }) => {
     if (!error) {
       setUser(null)
 
+      notify("Good-Bye", "success")
+
       navigate(HOME_ROUTE)
     } else {
       notify(error.message, "error")
